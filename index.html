@@ -14,11 +14,14 @@
         <div class="menu-bar">
             <div class="logo">
                 <i class=" fa-regular fa-heart fa-bounce"></i>
-                Alana OS
+                Alana Edwards OS
             </div>
 
             <div class="nav-tabs">
                 <ul>
+                    <li id="date-time">
+
+                    </li>
                     <li>File</li>
                     <li>Edit</li>
                     <li>View</li>
@@ -29,22 +32,58 @@
 
     <div class="desktop">
 
-        <div class="cover-letter">
-            <!-- icon goes here -->
-            <!-- when clicked redirects user to full cover letter web page -->
-            <h1>Associate GTM Engineer</h1>
+        <div class="applications-wrapper">
+
+            <!-- Maybe add other widgets  -->
+
+            <div class="cover-letter">
+                <button>
+                    <a href="">
+                        <img src="assets/document.png" alt="document icon">
+                        <p>Associate GTM Engineer Cover Letter </p>
+                    </a>
+                </button>
+            </div>
+            <div class="terminal">
+                <button class="terminal-button">
+
+                    <img src="assets/terminal.png" alt="terminal icon">
+                    <p>Terminal</p>
+
+                </button>
+            </div>
         </div>
 
-        <!-- Terminal icon -->
         <div class="terminal-window">
-            
+            <div class="terminal-titlebar">
+                <div class="apple-button-wrapper">
+                    <button class="close-button" aria-label="Close terminal">
+                        <img src="assets/1-close-1-normal.svg" class="apple-button" alt="">
+                    </button>
+                    <button class="minimize-button" aria-label="Minimize terminal">
+                        <img src="assets/2-minimize-1-normal.svg" class="apple-button" alt="">
+                    </button>
+                    <button class="maximize-button" aria-label="Expand terminal">
+                        <img src="assets/3-maximize-1-normal.svg" class="apple-button" alt="">
+                    </button>
+                </div>
+                <span>Alana's Terminal</span>
+            </div>
+
+            <div class="terminal-content">
+                <!-- My cover letter goes here -->
+            </div>
         </div>
 
     </div>
 
     <div class="bottom-dock">
         <!-- My footer goes here -->
+        <!-- attribution -->
+        <!-- <a href="https://www.flaticon.com/free-icons/terminal" title="terminal icons">Terminal icons created by Icon Mela - Flaticon</a> -->
     </div>
+
+    <script src="script.js"></script>
 </body>
 
 </html>
