@@ -54,40 +54,78 @@ button {
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  border-radius: .9375rem;
+  border-radius: 0.9375rem;
   background: white;
+  display: flex;
+  flex-direction: column;
 }
 
 .terminal-button {
-    width: 12.5rem;
+  width: 12.5rem;
 }
 
 .terminal-titlebar {
-    display: flex;
-    align-items: center;
-    gap: 1.25rem;
-    padding: 0.5rem;
-    background: rgb(246, 206, 217);
-    border-radius: .9375rem .9375rem 0 0;
+  display: flex;
+  align-items: center;
+  gap: 1.25rem;
+  padding: 0.5rem;
+  background: rgb(246, 206, 217);
+  border-radius: 0.9375rem 0.9375rem 0 0;
 }
 
 .apple-button-wrapper {
-    display: flex;
+  display: flex;
 }
 
 .apple-button {
-    height: 0.90rem;
-    width: 0.90rem;
+  height: 0.9rem;
+  width: 0.9rem;
 }
 
 span {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 8px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
 }
 
 .dark-mode-terminal {
-    height: 1rem;
-    width: 1rem;
+  height: 1rem;
+  width: 1rem;
+}
+
+.terminal-content {
+  flex: 1;
+  min-height: 0;
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.welcome-text {
+    margin-bottom: 1rem;
+}
+
+#cursor {
+  display: inline-block;
+  width: 0.5rem;
+  height: 1rem;
+  background: grey;
+  vertical-align: middle;
+  margin-left: 4px;
+  animation: blink 0.8s step-end infinite;
+}
+
+@keyframes blink {
+    0%, 100% {
+        background-color: transparent;
+    }
+    50% {
+        background-color: grey;
+    }
+}
+
+.input-title {
+  margin-left: 1rem;
 }
