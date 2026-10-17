@@ -48,6 +48,8 @@ button {
 .terminal-window {
   position: absolute;
   width: 36rem;
+  max-width: calc(100vw - 2rem);
+  box-sizing: border-box;
   height: 24.25rem;
   top: 50%;
   left: 50%;
@@ -62,6 +64,7 @@ button {
 
 .terminal-titlebar {
     display: flex;
+    align-items: center;
     gap: 1.25rem;
     padding: 0.5rem;
     background: rgb(246, 206, 217);
@@ -75,4 +78,16 @@ button {
 .apple-button {
     height: 0.90rem;
     width: 0.90rem;
+}
+
+span {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 8px;
+}
+
+.dark-mode-terminal {
+    height: 1rem;
+    width: 1rem;
 }
