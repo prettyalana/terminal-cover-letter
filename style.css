@@ -19,7 +19,8 @@ ul {
   justify-content: space-between;
   gap: 1rem;
   list-style-type: none;
-  white-space: nowrap
+  margin: 0;
+  padding: 0;
 }
 
 .applications-wrapper {
@@ -177,4 +178,12 @@ button {
 
 #terminal-window.hidden {
   display: none;
+}
+
+@media (max-width: 600px) {
+
+  .deco-item {
+    display: none;
+  }
+  
 }

@@ -1,17 +1,35 @@
 function displayDateTime() {
+  const smallerViewport = window.matchMedia("(max-width: 600px)").matches;
   const currentDateTime = new Date();
-  const shortDayName = currentDateTime.toLocaleDateString("en-US", {
-    weekday: "short",
-  });
-  const formattedDate = currentDateTime.toLocaleString([], {
-    month: "numeric",
-    day: "numeric",
-    year: "numeric",
-    hour: "2-digit",
-    minute: "2-digit",
-  });
-  document.getElementById("date-time").innerHTML =
-    shortDayName + " " + formattedDate;
+
+  if (smallerViewport) {
+    const shortDayName = currentDateTime.toLocaleDateString("en-US", {
+      weekday: "short",
+    });
+    const shortMonthName = currentDateTime.toLocaleDateString("en-US", {
+      month: "short",
+    });
+    const formattedDate = currentDateTime.toLocaleString([], {
+      day: "numeric",
+      hour: "2-digit",
+      minute: "2-digit",
+    });
+    document.getElementById("date-time").innerHTML =
+      shortDayName + " " + shortMonthName + " " + formattedDate;
+  } else {
+    const shortDayName = currentDateTime.toLocaleDateString("en-US", {
+      weekday: "short",
+    });
+    const formattedDate = currentDateTime.toLocaleString([], {
+      month: "numeric",
+      day: "numeric",
+      year: "numeric",
+      hour: "2-digit",
+      minute: "2-digit",
+    });
+    document.getElementById("date-time").innerHTML =
+      shortDayName + " " + formattedDate;
+  }
 }
 
 displayDateTime();
@@ -38,7 +56,8 @@ window.onload = function () {
 // Appending lines
 function appendNewPromptLine(text) {
   const promptLabel = document.createElement("code");
-  promptLabel.textContent = document.querySelector(".input-title").textContent + " " + text;
+  promptLabel.textContent =
+    document.querySelector(".input-title").textContent + " " + text;
   outputArea.append(promptLabel);
 }
 
@@ -56,7 +75,7 @@ form.addEventListener("submit", function (event) {
   displayText.textContent = "";
 
   if (inputValue.length === 0) {
-    return
+    return;
   } else if (inputValue === "cover-letter") {
     const coverLetter = document.createElement("a");
     coverLetter.href = path;
@@ -74,10 +93,9 @@ form.addEventListener("submit", function (event) {
 });
 
 // Add event listener to close button
-const terminalWindow = document.getElementById("terminal-window")
+const terminalWindow = document.getElementById("terminal-window");
 const closeButton = document.querySelector(".close-button");
-function closeTerminal ()
-{
+function closeTerminal() {
   closeButton.addEventListener("click", function (event) {
     terminalWindow.classList.add("hidden");
   });
@@ -86,9 +104,8 @@ function closeTerminal ()
 closeTerminal();
 
 // Add event listener to desktop terminal button
-const terminalButton = document.getElementById("terminal-button")
-function openTerminal ()
-{
+const terminalButton = document.getElementById("terminal-button");
+function openTerminal() {
   terminalButton.addEventListener("click", function (event) {
     terminalWindow.classList.remove("hidden");
     input.focus({ preventScroll: true });
