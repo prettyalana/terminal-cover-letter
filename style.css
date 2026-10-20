@@ -37,13 +37,17 @@ a {
 }
 
 img {
-  height: 5rem;
-  width: 5rem;
+  height: 4rem;
+  width: 4rem;
 }
 
 button {
   background: none;
   border: none;
+}
+
+.close-button {
+  cursor: pointer;
 }
 
 #terminal-window {
@@ -63,6 +67,7 @@ button {
 
 #terminal-button {
   width: 12.5rem;
+  cursor: pointer;
 }
 
 .terminal-titlebar {
