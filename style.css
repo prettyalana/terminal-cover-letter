@@ -19,6 +19,7 @@ ul {
   justify-content: space-between;
   gap: 1rem;
   list-style-type: none;
+  white-space: nowrap
 }
 
 .applications-wrapper {
@@ -44,7 +45,7 @@ button {
   border: none;
 }
 
-.terminal-window {
+#terminal-window {
   position: absolute;
   width: 36rem;
   max-width: calc(100vw - 2rem);
@@ -59,7 +60,7 @@ button {
   flex-direction: column;
 }
 
-.terminal-button {
+#terminal-button {
   width: 12.5rem;
 }
 
@@ -105,6 +106,7 @@ button {
 .welcome-text {
   margin-bottom: 1rem;
   text-align: center;
+  padding: 0.5rem;
 }
 
 .prompt-wrapper {
@@ -167,3 +169,6 @@ button {
   margin-right: 0.5rem;
 }
 
+#terminal-window.hidden {
+  display: none;
+}

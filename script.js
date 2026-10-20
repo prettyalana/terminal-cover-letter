@@ -44,7 +44,6 @@ function appendNewPromptLine(text) {
 
 // Attach submit listener to input-field form
 const form = document.querySelector(".input-field");
-
 form.addEventListener("submit", function (event) {
   // Prevent page reload
   event.preventDefault();
@@ -73,3 +72,27 @@ form.addEventListener("submit", function (event) {
     outputArea.append(errorLine);
   }
 });
+
+// Add event listener to close button
+const terminalWindow = document.getElementById("terminal-window")
+const closeButton = document.querySelector(".close-button");
+function closeTerminal ()
+{
+  closeButton.addEventListener("click", function (event) {
+    terminalWindow.classList.add("hidden");
+  });
+}
+
+closeTerminal();
+
+// Add event listener to desktop terminal button
+const terminalButton = document.getElementById("terminal-button")
+function openTerminal ()
+{
+  terminalButton.addEventListener("click", function (event) {
+    terminalWindow.classList.remove("hidden");
+    input.focus({ preventScroll: true });
+  });
+}
+
+openTerminal();
