@@ -1,7 +1,7 @@
-@import url("https://fonts.googleapis.com/css2?family=Pixelify+Sans:wght@400..700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Space+Mono:ital,wght@0,400;0,700;1,400;1,700&display=swap");
 
 body {
-  font-family: "Pixelify Sans", sans-serif;
+  font-family: "Space Mono", monospace;
   background: rgb(247, 222, 229);
   margin: 0;
   text-align: center;
@@ -82,11 +82,11 @@ button {
   width: 0.9rem;
 }
 
-span {
+.terminal-title {
   display: flex;
   justify-content: center;
   align-items: center;
-  gap: 8px;
+  gap: 0.5rem;
 }
 
 .dark-mode-terminal {
@@ -94,7 +94,7 @@ span {
   width: 1rem;
 }
 
-.terminal-content {
+#terminal-content {
   flex: 1;
   min-height: 0;
   overflow-y: auto;
@@ -104,7 +104,13 @@ span {
 }
 
 .welcome-text {
-    margin-bottom: 1rem;
+  margin-bottom: 1rem;
+}
+
+.prompt-wrapper {
+  position: relative;
+  display: flex;
+  align-items: center;
 }
 
 #cursor {
@@ -113,19 +119,43 @@ span {
   height: 1rem;
   background: grey;
   vertical-align: middle;
-  margin-left: 4px;
   animation: blink 0.8s step-end infinite;
 }
 
 @keyframes blink {
-    0%, 100% {
-        background-color: transparent;
-    }
-    50% {
-        background-color: grey;
-    }
+  0%,
+  100% {
+    background-color: transparent;
+  }
+  50% {
+    background-color: grey;
+  }
+}
+
+.input-field {
+  position: relative;
+}
+
+#terminal-input {
+  pointer-events: none;
+  font-size: 1rem;
+  position: absolute;
+  top: 0;
+  left: 0;
+  padding: 0;
+  border: 0;
+  opacity: 0;
 }
 
 .input-title {
   margin-left: 1rem;
+  margin-right: 0.5rem;
+}
+
+#input-text {
+  white-space: pre;
+}
+
+.cover-letter-text {
+  color: rgb(169, 2, 2);
 }
