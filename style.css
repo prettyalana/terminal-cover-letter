@@ -4,7 +4,6 @@ body {
   font-family: "Space Mono", monospace;
   background: rgb(247, 222, 229);
   margin: 0;
-  text-align: center;
 }
 
 .menu-bar {
@@ -105,6 +104,7 @@ button {
 
 .welcome-text {
   margin-bottom: 1rem;
+  text-align: center;
 }
 
 .prompt-wrapper {
@@ -148,7 +148,7 @@ button {
 }
 
 .input-title {
-  margin-left: 1rem;
+  margin-left: 0.5rem;
   margin-right: 0.5rem;
 }
 
@@ -159,3 +159,11 @@ button {
 .cover-letter-text {
   color: rgb(169, 2, 2);
 }
+
+#output-area code {
+  display: flex;
+  flex-direction: column;
+  margin-left: 0.5rem;
+  margin-right: 0.5rem;
+}
+

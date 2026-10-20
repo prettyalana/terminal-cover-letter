@@ -35,12 +35,41 @@ window.onload = function () {
   input.focus({ preventScroll: true });
 };
 
+// Appending lines
+function appendNewPromptLine(text) {
+  const promptLabel = document.createElement("code");
+  promptLabel.textContent = document.querySelector(".input-title").textContent + " " + text;
+  outputArea.append(promptLabel);
+}
+
 // Attach submit listener to input-field form
-const form = document.getElementById("input-field");
+const form = document.querySelector(".input-field");
 
 form.addEventListener("submit", function (event) {
-    // Prevent page reload
-    event.preventDefault();
+  // Prevent page reload
+  event.preventDefault();
+  const inputValue = input.value.trim();
+  const echo = document.getElementById("terminal-output");
+  const path = "documents/Alana_Edwards_LeanTaaS_Cover_Letter.pdf";
 
-    
+  appendNewPromptLine(inputValue);
+  input.value = "";
+  displayText.textContent = "";
+
+  if (inputValue.length === 0) {
+    return
+  } else if (inputValue === "cover-letter") {
+    const coverLetter = document.createElement("a");
+    coverLetter.href = path;
+    coverLetter.id = "cover-letter-display";
+    window.open(coverLetter, "_blank");
+  } else if (inputValue === "clear") {
+    input.value = "";
+    displayText.textContent = "";
+    outputArea.textContent = "";
+  } else {
+    const errorLine = document.createElement("code");
+    errorLine.textContent = "command not found: " + inputValue;
+    outputArea.append(errorLine);
+  }
 });
